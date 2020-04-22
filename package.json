@@ -1,0 +1,24 @@
+{
+  "name": "socket-react-chat-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev-server": "nodemon app.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run dev-server\" \"npm run client\"",
+    "client-install":"cd client && npm install",
+    "heroku-postbuild":"npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "Mark Witt",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "express": "^4.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0"
+  }
+}
